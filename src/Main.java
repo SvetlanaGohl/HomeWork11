@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,6 +15,8 @@ public class Main {
         Book bookCatalog2 = new Book("Детство", 1913);
         System.out.println("Книга - " + bookCatalog2.getBookName());
         System.out.println("Публикация - " + bookCatalog2.getPublishingYear() + " года.");
+        bookCatalog2.setPublishingYear(1915);
+        System.out.println("Измененная публикация - " + bookCatalog2.getPublishingYear() + " года.");
     }
 
 }
