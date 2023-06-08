@@ -2,9 +2,12 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        Author author = new Author("Лев ", "Толстой");
-        System.out.println("Автор - " + author.getAuthorName() + author.getAuthorSurname());
-        Book bookCatalog = new Book("Война и мир", 1880);
+        Book bookCatalog = new Book("Война и мир", 1880, "Лев ", "Толстой");
+
+        // Не понимаю как вклинить сюда автора с именем и фамилией?
+
+
+        System.out.println("Автор - " + bookCatalog.getAuthor.getAuthorName() + bookCatalog.getAuthor.getAuthorSurname());
         System.out.println("Книга - " + bookCatalog.getBookName());
         System.out.println("Публикация - " + bookCatalog.getPublishingYear() + " года.");
 
@@ -20,3 +23,4 @@ public class Main {
     }
 
 }
+
