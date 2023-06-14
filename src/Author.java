@@ -7,9 +7,11 @@ public class Author {
         this.Surname = Surname;
     }
     public String getAuthorName(){
+
         return this.Name;
     }
     public String getAuthorSurname() {
+
         return this.Surname;
     }
 }
