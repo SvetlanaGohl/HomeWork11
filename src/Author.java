@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Author {
     private String Name;
     private String Surname;
@@ -13,5 +15,15 @@ public class Author {
     public String getAuthorSurname() {
 
         return this.Surname;
+    }
+    public String toString () {
+        return "Автор - " + this.Name + " " + this.Surname;
+    }
+
+    public boolean equals(Author author) {
+        return this.Name.equals(author.Name) && this.Surname.equals(author.Surname);
+    }
+        public int hashCode() {
+        return Objects.hash(Name, Surname);
     }
 }
