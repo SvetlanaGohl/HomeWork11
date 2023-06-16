@@ -28,9 +28,14 @@ public class Book {
         return "Книга - " + this.bookName + ", Год побликации - " + this.publishingYear;
     }
 
-    public boolean equals(Book book) {
-        return this.bookName.equals(book.bookName) && this.author.equals(book.author) && this.publishingYear == book.publishingYear;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publishingYear == book.publishingYear && Objects.equals(author, book.author) && Objects.equals(bookName, book.bookName);
     }
+
     public int hashCode() {
         return Objects.hash(author, bookName, publishingYear);
     }

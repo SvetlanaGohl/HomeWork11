@@ -20,10 +20,15 @@ public class Author {
         return "Автор - " + this.Name + " " + this.Surname;
     }
 
-    public boolean equals(Author author) {
-        return this.Name.equals(author.Name) && this.Surname.equals(author.Surname);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(Name, author.Name) && Objects.equals(Surname, author.Surname);
     }
-        public int hashCode() {
+
+    public int hashCode() {
         return Objects.hash(Name, Surname);
     }
 }
