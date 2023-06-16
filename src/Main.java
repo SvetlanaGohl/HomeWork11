@@ -2,25 +2,27 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        Book bookCatalog = new Book("Война и мир", 1880, "Лев ", "Толстой");
+        Author tolstoy = new Author("Лев", "Толстой");
+        Book warAndPeace = new Book("Война и мир", tolstoy, 1882);
 
-        // Не понимаю как вклинить сюда автора с именем и фамилией?
+        System.out.println(warAndPeace.toString());
+        System.out.println(tolstoy.toString());
 
-
-        System.out.println("Автор - " + bookCatalog.getAuthor.getAuthorName() + bookCatalog.getAuthor.getAuthorSurname());
-        System.out.println("Книга - " + bookCatalog.getBookName());
-        System.out.println("Публикация - " + bookCatalog.getPublishingYear() + " года.");
 
         System.out.println();
 
-        Author author2 = new Author("Максим ", "Горький");
-        System.out.println("Автор - " + author2.getAuthorName() + author2.getAuthorSurname());
-        Book bookCatalog2 = new Book("Детство", 1913);
-        System.out.println("Книга - " + bookCatalog2.getBookName());
-        System.out.println("Публикация - " + bookCatalog2.getPublishingYear() + " года.");
-        bookCatalog2.setPublishingYear(1915);
-        System.out.println("Измененная публикация - " + bookCatalog2.getPublishingYear() + " года.");
-    }
+        Author gorky = new Author("Максим ", "Горький");
+        Book detstvo = new Book("Детство", gorky, 1913);
+        System.out.println(detstvo.toString());
+        System.out.println(gorky.toString());
 
+        detstvo.setPublishingYear(1915);
+        System.out.println("Измененная публикация - " + detstvo.getPublishingYear() + " года.");
+
+        Author gorkii = new Author("Максим ", "Горький");
+        Book gorkiiBook = new Book("Детство", gorkii, 1915);
+
+        System.out.println(gorkiiBook.equals(detstvo));
+    }
 }
 
